@@ -12,6 +12,8 @@
 #include <ftxui/dom/node.hpp>      // for Render
 #include <ftxui/screen/box.hpp>    // for ftxui
 
+#include <type_traits>
+
 using namespace std::chrono_literals;
 int main() {
   using namespace ftxui;
@@ -33,7 +35,11 @@ int main() {
                     }) |
                     border;
 
-    document = vbox(filler(), document);
+    document = vbox(ftxui::filler(), document);
+
+    static_assert( std::is_base_of_v<ftxui::Element, decltype(paragraph(p))> );
+    static_assert( std::is_base_of_v<ftxui::Element, decltype(ftxui::filler())> );
+    static_assert( std::is_base_of_v<ftxui::Element, decltype(document)> );
 
     // auto screen = Screen::Create(Dimension::Fit(document));
     // Render(screen, document);
