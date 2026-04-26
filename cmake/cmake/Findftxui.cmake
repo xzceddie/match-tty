@@ -1,9 +1,9 @@
 FetchContent_Declare(
-  FTXUI
+  ftxui
   URL https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v6.1.9.tar.gz
 )
 
 
 find_package(Threads REQUIRED)
 
-FetchContent_MakeAvailable( FTXUI )
+FetchContent_MakeAvailable( ftxui )
