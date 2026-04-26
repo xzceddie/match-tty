@@ -36,6 +36,7 @@ int main() {
                     border;
 
     document = vbox(ftxui::filler(), document);
+    document |= border;
 
     static_assert( std::is_base_of_v<ftxui::Element, decltype(paragraph(p))> );
     static_assert( std::is_base_of_v<ftxui::Element, decltype(ftxui::filler())> );
