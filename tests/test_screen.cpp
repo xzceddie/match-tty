@@ -10,5 +10,11 @@ int main()
         ftxui::Dimension::Fixed(10)
     );
 
+    auto& topleft = screen.PixelAt(0, 0);
+
+    topleft.character = "X";
+    topleft.foreground_color = ftxui::Color::Blue;
+    topleft.background_color = ftxui::Color::Yellow;
+
     screen.Print();
 }
